@@ -8,7 +8,6 @@ import {Link} from 'gatsby'
 
 export default () => (
         <Layout>
-            Hello from backroads
             <SimpleHero>
                 <Banner title="continue exploring" info="Check out the various fun adventures we provide.">
                     <Link to="/tours" className="btn-white">explore tours</Link>
