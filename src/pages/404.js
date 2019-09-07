@@ -2,16 +2,31 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import styles from '../css/error.module.css'
-import {Link} from 'gatsby'
+import {graphql} from 'gatsby'
+import StyledHero from '../components/StyledHero'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export default function error() {
+export default function error({data}) {
     return (
         <Layout>
-            <header className={styles.error}>
-                <Banner title="oops it's a dead end">
-                    <Link to='/' className="btn-white">back to home page</Link>
+            <StyledHero img={data.errorBcg.childImageSharp.fluid} home="true" className={styles.error}>
+                <Banner>
+                    <AniLink fade to='/' className="btn-white">back to home page</AniLink>
                 </Banner>
-            </header>
+            </StyledHero>
         </Layout>
     )
 }
+
+
+export const query = graphql`
+{
+	errorBcg:file(relativePath: {eq:"errorBcg.png"}){
+    childImageSharp{
+      fluid(quality: 90, maxWidth: 4160){
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+}
+`
