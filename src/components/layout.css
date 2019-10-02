@@ -7,6 +7,7 @@
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
+  --darkGreyy: #A9A9A9;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 4px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -35,6 +36,9 @@ h6 {
   font-family: "Poppins", sans-serif;
   margin-bottom: 1.25rem;
   letter-spacing: var(--mainSpacing);
+}
+a{
+  text-decoration: none;
 }
 p {
   margin-bottom: 1.25rem;
